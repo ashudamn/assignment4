@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>I am index.html</title>
+<script type="text/javascript">
+function validateForm(){
+	var driver=document.forms["myForm"]["driver"].value;
+	var url=document.forms["myForm"]["url"].value;
+	var user=document.forms["myForm"]["username"].value;
+	var password=document.forms["myForm"]["password"].value;
+	var query=document.forms["myForm"]["query"].value;
+	console.log('driver '+driver);
+	console.log('url '+url);
+	console.log('username '+user);
+	console.log('password '+password);
+	console.log('query '+query);
+	if(driver==""){
+		alert("Driver Name must be filled out");
+		return false;
+	}
+	if(url==""){
+		alert("url must be filled out");
+		return false;
+	}
+	if(user==""){
+		alert("user name cannot be empty");
+		return false;
+	}
+	if(password==""){
+		alert("password cannot be empty");
+		return false;
+		}
+	if(query==""){
+		alert("query cannot be empty");
+		return false;
+	}
+	return true;
+}
+
+</script>
+</head>
+<body>
+<form action="validate.jsp" name="myForm" onsubmit="return validateForm()"  method="POST">
+<h5>Driver</h5>
+<input type="text" name="driver" value="com.mysql.jdbc.Driver">
+<h5>Url</h5>
+<input type="text" name="url" value="jdbc:mysql://localhost:3306/northwind">
+<h5>Enter user name</h5>
+<input type="text" name="username" value="root">
+<br>
+<h5>Enter password</h5>
+<input type="password" name="password">
+<br>
+<h5>Enter Query</h5>
+<input type="text" name="query">
+<br>
+<input type="submit">
+</form>
+
+</body>
+
+</html>
